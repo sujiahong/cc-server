@@ -1,0 +1,18 @@
+{
+    "_comment": "recharge_white_ip:充值白名单",
+    "isOpenCard" : false,
+    "qiniu": {
+        "ACCESS_KEY": "9fcqe5c-ItxWkakHm5u06Zb10xqmV19Zo7rz8wQU",
+        "SECRET_KEY": "lMXApO5gNXZx34Y-ebu3BSh_tKz7lvvb6IMU_me4",
+        "Bucket_name": "gamerunfast",
+        "prefix_url": "http://qiniu.goamob.com/"
+    },
+    "redis_host": "192.168.10.34",
+    "redis_port": 6379,
+    "redis_db": 0,
+    "recharge_white_ip":["127.0.0.1","60.205.218.5"],
+    "BIND_EXTERNAL_FORMAL_SOCKET": "47.94.211.197:8011",
+    "gm_debug" : true,
+    "promoter_url": "http://192.168.10.34:13000",
+    "compkey": "040109182526eGGew9ge"
+}

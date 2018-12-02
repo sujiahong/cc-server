@@ -1,0 +1,8 @@
+{
+  "appId": "123123",
+  "masterKey": "qweqwe",
+  "restAPIKey":"123123",
+  "javascriptKey":"123123",
+  "appName": "game",
+  "serverURL": "http://47.94.202.207:1337/parse"
+}

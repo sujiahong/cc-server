@@ -1,0 +1,12 @@
+{
+  "development":{
+    "arena": [
+      {"id": 1, "time": "0 0/1 * * * *", "action": "rankCron.rank"}
+    ]
+  },
+  "production":{
+    "arena": [
+      {"id": 1, "time": "0 0/1 * * * *", "action": "rankCron.rank"}
+    ]
+  }
+}

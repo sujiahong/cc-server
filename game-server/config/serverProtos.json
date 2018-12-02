@@ -1,0 +1,424 @@
+{
+  "connector.connectHandler.login":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string userId" : 3,
+    "optional string userNo" : 4,
+    "optional string roomId" : 5,
+    "optional int32 countOfRoomCard" : 6
+
+  },
+
+  "connector.roomHandler.generateRoom" : {
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string roomId":3,
+    "optional int32 cardCountPerPortion" : 4,
+    "optional int32 checkRaiseSetting" : 5,
+    "optional int32 numberOfRun" : 6,
+    "repeated Players playerList" : 7,
+
+    "message Players" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional int32 isReady":4,
+      "optional int32 roomScore":5,
+      "optional int32 isOnline":6,
+      "optional int32 inIndex":7,
+      "optional int32 isRoomCreator":8
+    }
+  },
+  "connector.roomHandler.enterRoom" : {
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string runId":3,
+    "optional string roomId":4,
+    "optional int32 runNumber":5,
+    "optional int32 numberOfRun":6,
+    "optional int32 cardCountPerPortion":7,
+    "optional int32 checkRaiseSetting":8,
+    "repeated Players playerList" : 9,
+    "message Players" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional int32 isReady":4,
+      "optional int32 roomScore":5,
+      "optional int32 isOnline":6,
+      "optional int32 inIndex":7,
+      "optional int32 isRoomCreator":8
+    }
+  },
+  "connector.connectHandler.pushErrMsg" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "connector.runHandler.reqEnterRun" : {
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string runId" : 3
+
+  },
+
+  "room.roomHandler.sendWordMsg" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+  "room.roomHandler.sendVoiceMsg" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+  "room.roomHandler.sendFaceMsg" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "room.roomHandler.outRoom" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "room.roomHandler.getReady" : {
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional int32 isStart":3,
+    "optional string runId":4,
+    "optional string userId":5,
+    "optional int32 isReady":6
+  },
+
+  "room.roomHandler.startDismissRoom" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "room.roomHandler.voteForDissmissRoom" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "run.runHandler.getOwnerCards" : {
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional Data data":3,
+    "message Data":{
+      "optional int32 isBeingBoss" : 1,
+      "optional string onGoingUserId" : 2,
+      "optional string nextUserId" : 3,
+      "optional int32 runNumber" : 4,
+      "optional Card maxCard" : 5,
+      "optional Card minCard" : 6,
+      "repeated Card showCard":7,
+      "repeated GameInfo playerGameInfo":8,
+
+      "message Card" : {
+        "optional int32 privatePoint" : 1,
+        "optional int32 rank" : 2
+      },
+      "message GameInfo":{
+        "message Card" : {
+          "optional int32 privatePoint" : 1,
+          "optional int32 rank" : 2
+        },
+        "optional string userId" : 1,
+        "optional int32 countOfHandCards" : 2,
+        "repeated Card cardsPast" : 3,
+        "repeated Card lastPast" : 4,
+        "repeated Card handCards" : 5,
+        "optional int32 runRank" : 6,
+        "optional int32 runScore" : 7,
+        "optional int32 isBoss" : 8,
+        "optional int32 haveMinCard" : 9,
+        "optional int32 isMinCardOwner" : 10
+      }
+    }
+
+  },
+
+  "run.runHandler.beBoss" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+  "run.runHandler.playCards" : {
+    "optional int32 code" : 1,
+    "optional string message":2
+  },
+
+  "query.queryHandler.queryResult":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "repeated Record playerRecord":3,
+    "message Record" : {
+      "optional string roomId" : 1,
+      "optional string time" : 2,
+      "optional int32 useCard" : 3,
+      "repeated Players playerRecord" : 4,
+      "message Players":{
+        "optional string userId" : 1,
+        "optional string nickName" : 2,
+        "optional string userIconUrl" : 3,
+        "optional int32 score" : 4
+      }
+    }
+  },
+
+  "query.queryHandler.consumptionRecord":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional int32 hadUseCard" : 3,
+    "optional int32 restCard" : 4,
+    "repeated Data data" : 5,
+    "message Data":{
+      "optional string roomId" : 1,
+      "optional string time" : 2,
+      "optional int32 useCard" : 3,
+      "optional string creatorId" : 4,
+      "repeated Record playerRecord" : 5,
+      "message Record":{
+        "optional string userId" : 1,
+        "optional string nickName" : 2,
+        "optional string userIconUrl" : 3,
+        "optional int32 score" : 4
+      }
+    }
+  },
+  "query.queryHandler.queryCards":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional int32 restCard" : 3,
+    "optional int32 hadUseCard" : 4
+  },
+  "query.queryHandler.getNotice":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string notice":3
+
+  },
+  "query.queryHandler.getBuyCardTips":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string notice":3
+
+  },
+  "connector.queryHandler.getVersion":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string version":3,
+    "optional int32 installFlag":4,
+    "optional string description":5
+  },
+  "query.queryHandler.getAdsImg":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string imgUrl":3
+  },
+  "query.queryHandler.getNoticeImg":{
+    "optional int32 code" : 1,
+    "optional string message":2,
+    "optional string imgUrl":3
+  },
+
+
+  "onAddUser" : {
+    "optional string userId" : 1,
+    "optional string nickName" : 2,
+    "optional string userIconUrl" : 3,
+    "optional int32 isReady" : 4,
+    "optional int32 roomScore" : 5,
+    "optional int32 inIndex" : 6,
+    "optional int32 isRoomCreator" :7
+  },
+  "onPushGetReady" : {
+    "optional int32 code" : 1,
+    "optional string userId" : 2,
+    "optional int32 isStart" : 3,
+    "optional string message" : 4,
+    "optional int32 isReady" : 5,
+    "optional string runId" : 6
+  },
+  "onPushWordMessage" : {
+    "optional string userId" : 1,
+    "optional string wordMsg" : 2,
+    "optional string route" : 3
+  },
+  "onPushVoiceMessage" : {
+    "optional string userId" : 1,
+    "optional string voiceMsg" : 2,
+    "optional int32 audioLength":3,
+    "optional string route" : 4
+  },
+  "onPushFaceMessage" : {
+    "optional string userId" : 1,
+    "optional string faceMsg" : 2,
+    "optional string route" : 3
+  },
+  "onVoteDismissRoom" : {
+    "optional string userId" : 1,
+    "optional int32 agree":2,
+    "optional int32 voteStatus":3,
+    "optional string route" : 4,
+    "repeated Players playerRecord" : 5,
+    "message Players" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional int32 runRank" : 4,
+      "optional int32 roomRank" : 5,
+      "optional int32 runScore" : 6,
+      "optional int32 totalScore" : 7,
+      "optional int32 isBoss" : 8,
+      "optional int32 playCount" : 9,
+      "optional string userNo" : 10,
+      "optional int32 isCreator" : 11
+    }
+  },
+
+  "onLeave" : {
+    "optional string userId" : 1
+  },
+
+  "onStartDismissRoom" : {
+    "optional string userId" : 1
+  },
+
+  "onDismissRoom" : {
+    "optional int32 status" : 1
+  },
+
+  "onStartRun" : {
+    "optional int32 isStart" : 1,
+    "optional int32 runNumber" : 2,
+    "optional Card maxCard" : 3,
+    "optional Card minCard" : 4,
+    "repeated GameInfo playerGameInfo":5,
+    "repeated UserState playerList":6,
+    "message Card" : {
+      "optional int32 privatePoint" : 1,
+      "optional int32 rank" : 2
+    },
+    "message GameInfo":{
+      "message Card" : {
+        "optional int32 privatePoint" : 1,
+        "optional int32 rank" : 2
+      },
+      "optional string userId" : 1,
+      "optional int32 countOfHandCards" : 2,
+      "repeated Card cardsPast" : 3,
+      "repeated Card lastPast" : 4,
+      "repeated Card handCards" : 5,
+      "optional int32 runRank" : 6,
+      "optional int32 runScore" : 7,
+      "optional int32 isBoss" : 8,
+      "optional int32 haveMinCard" : 9,
+      "optional int32 isMinCardOwner" : 10
+    },
+    "message UserState" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional string userNo" : 4,
+      "optional int32 isReady" : 5,
+      "optional int32 isOnline" : 7,
+      "optional int32 isAgreeDismissRoom" : 8,
+      "optional int32 isRoomCreator" : 9,
+      "optional string serverId" : 10,
+      "optional int32 roomScore" : 11,
+      "optional int32 inIndex" : 12
+    }
+  },
+
+  "onBeBossResult" : {
+    "optional int32 restTime" : 1,
+    "optional string userId" : 2,
+    "optional int32 beTheBoss" : 3,
+    "optional string nextUserId":4
+  },
+
+  "onRunEnd" : {
+    "repeated Players playerRecord" : 1,
+    "optional int32 numberOfRun" : 2,
+    "optional int32 haveBoss" : 3,
+    "optional string route" : 4,
+    "message Players" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional int32 runRank" : 4,
+      "optional int32 roomRank" : 5,
+      "optional int32 runScore" : 6,
+      "optional int32 totalScore" : 7,
+      "optional int32 isBoss" : 8,
+      "optional int32 playCount" : 9,
+      "optional string userNo" : 10,
+      "optional int32 isCreator" : 11
+    }
+  },
+  "onRoomEnd" : {
+    "repeated Players playerRecord" : 1,
+    "message Players" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional int32 runRank" : 4,
+      "optional int32 roomRank" : 5,
+      "optional int32 runScore" : 6,
+      "optional int32 totalScore" : 7,
+      "optional int32 isBoss" : 8,
+      "optional int32 playCount" : 9,
+      "optional string userNo" : 10,
+      "optional int32 isCreator" : 11
+    }
+  },
+  "onPase" : {
+    "optional string userId" : 1,
+    "optional string nickName" : 2
+  },
+  "onRegularCircle" : {
+    "optional string onGoingUserId" : 1,
+    "optional string nextUserId" : 2,
+    "optional Card maxCard" : 3,
+    "optional Card minCard" : 4,
+    "repeated Card cardsList" : 5,
+    "repeated GameInfo playerGameInfo" : 6,
+    "repeated UserState pasePlayers" : 7,
+    "message Card" : {
+      "optional int32 privatePoint" : 1,
+      "optional int32 rank" : 2
+    },
+    "message GameInfo":{
+      "message Card" : {
+        "optional int32 privatePoint" : 1,
+        "optional int32 rank" : 2
+      },
+      "optional string userId" : 1,
+      "optional int32 countOfHandCards" : 2,
+      "repeated Card cardsPast" : 3,
+      "repeated Card lastPast" : 4,
+      "repeated Card handCards" : 5,
+      "optional int32 runRank" : 6,
+      "optional int32 runScore" : 7,
+      "optional int32 isBoss" : 8,
+      "optional int32 haveMinCard" : 9,
+      "optional int32 isMinCardOwner" : 10
+    },
+    "message UserState" : {
+      "optional string userId" : 1,
+      "optional string nickName" : 2,
+      "optional string userIconUrl" : 3,
+      "optional string userNo" : 4,
+      "optional int32 isReady" : 5,
+      "optional int32 isOnline" : 7,
+      "optional int32 isAgreeDismissRoom" : 8,
+      "optional int32 isRoomCreator" : 9,
+      "optional string serverId" : 10,
+      "optional int32 roomScore" : 11,
+      "optional int32 inIndex" : 12
+    }
+  },
+  "onOneCard" : {
+    "optional string nickName" : 1,
+    "optional string userId" : 2
+  }
+}

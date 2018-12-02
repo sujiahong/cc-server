@@ -1,0 +1,52 @@
+{
+    "development": {
+      "connector": [
+        {"id": "connector-server-1", "host": "127.0.0.1","remote":"192.168.10.34", "port": 10110, "clientPort": 10150, "frontend": true,"args":" --debug=11110","cpu":1},
+        {"id": "connector-server-2", "host": "127.0.0.1","remote":"192.168.10.34", "port": 10210, "clientPort": 10250, "frontend": true,"args":" --debug=12210","cpu":2}
+      ],
+      "home": [
+        {"id": "home-server-1", "host": "127.0.0.1", "port": 10510,"args":" --debug=11410","cpu":1}
+      ],
+      "gate": [
+        {"id": "gate-server-1", "host": "127.0.0.1", "clientPort": 10710, "frontend": true,"cpu":2}
+      ],
+      "game_niu":[
+        {"id": "game_niu-server-1", "host": "127.0.0.1", "port": 10810, "args":" --debug=11610","cpu":0}
+      ],
+      "game_gobang":[
+        {"id": "game_gobang-server-1", "host": "127.0.0.1", "port": 11810, "args":" --debug=12610","cpu":3}
+      ],
+      "game_keng":[
+        {"id": "game_keng-server-1", "host": "127.0.0.1", "port": 12810, "args":" --debug=13610","cpu":0}
+      ],
+      "game_jin":[
+        {"id": "game_jin-server-1", "host": "127.0.0.1", "port": 13810, "args":" --debug=14610","cpu":3}
+      ],
+      "game_ddz":[
+        {"id": "game_ddz-server-1", "host": "127.0.0.1", "port": 14810, "args":" --debug=15610","cpu":0}
+      ],
+      "timer":[
+        {"id": "timer-server-1", "host": "127.0.0.1", "port": 5810, "cpu": 3}
+      ]
+    },
+    "production": {
+      "connector": [
+        {"id": "connector-server-1", "host": "127.0.0.1","remote":"doudizhu.dingsns.com", "port": 4550, "clientPort": 3550, "frontend": true,"args":" --debug=5858","cpu":1},
+        {"id": "connector-server-2", "host": "127.0.0.1","remote":"doudizhu.dingsns.com", "port": 4560, "clientPort": 3560, "frontend": true,"args":" --debug=5850","cpu":2}
+      ],
+      "query":[
+        {"id": "query-server-1", "host": "127.0.0.1", "port": 9550,"args":" --debug=5860","cpu":3}
+      ],
+      "room": [
+        {"id": "room-server-1", "host": "127.0.0.1", "port": 8550,"args":" --debug=5870","cpu":4},
+        {"id": "room-server-2", "host": "127.0.0.1", "port": 8560,"args":" --debug=5871","cpu":3}
+      ],
+      "run": [
+        {"id": "run-server-1", "host": "127.0.0.1", "port": 9560,"args":" --debug=5880","cpu":4}
+      ],
+  
+      "gate": [
+        {"id": "gate-server-1", "host": "127.0.0.1", "clientPort": 10710, "frontend": true,"cpu":3}
+      ]
+    }
+  }
